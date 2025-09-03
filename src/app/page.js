@@ -1,13 +1,19 @@
-import Head from "next/head";
-import Image from "next/image";
-import favicon from "../../public/favicon.svg"
+import BestSeller from "@/components/home/BestSeller";
+import Hero from "@/components/home/Hero";
+import LatestCollection from "@/components/home/LatestCollection";
+import NewsLetterBox from "@/components/home/NewsLetterBox";
+import OurPolicy from "@/components/home/OurPolicy";
 
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center items-center align-center h-[100vh] text-purple-400">
-      <h1 className="text-5xl font-bold">Welcome to My Website</h1>
-    </div>
+      <div>
+        <Hero />
+        <LatestCollection />
+        <BestSeller />
+        <OurPolicy />
+        <NewsLetterBox />
+      </div>
     </>
   );
 }
