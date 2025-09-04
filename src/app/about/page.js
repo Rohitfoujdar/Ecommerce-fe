@@ -4,13 +4,13 @@ import { assets } from "../../../public/assets/assets";
 import Image from "next/image";
 import { aboutData, chooseUsData } from "@/content/about";
 import NewsLetterBox from "@/components/home/NewsLetterBox";
-import { TEXT_OUR_MISSION } from "../../../text";
+import { TEXT_ABOUT, TEXT_CHOOSE, TEXT_OUR_MISSION, TEXT_US, TEXT_WHY } from "../../../text";
 
 export default function page() {
   return (
     <div className="section-width">
       <div className="text-2xl text-center pt-8 border-t border-gray-300">
-        <Title text1={"ABOUT"} text2={"US"} />
+        <Title text1={TEXT_ABOUT} text2={TEXT_US} />
       </div>
       <div className="my-10 flex flex-col md:flex-row gap-16">
         <Image
@@ -31,9 +31,8 @@ export default function page() {
           )}
         </div>
       </div>
-
       <div className="text-xl py-4">
-        <Title text1={"WHY"} text2={"CHOOSE US"} />
+        <Title text1={TEXT_WHY} text2={TEXT_CHOOSE} />
       </div>
       <div className="flex flex-col md:flex-row text-sm">
         {chooseUsData.map((item, index) => (

@@ -60,3 +60,7 @@ export const TEXT_LOG = "Login Here"
 
 // About------->
 export const TEXT_OUR_MISSION = "Our Mission"
+export const TEXT_ABOUT = "ABOUT"
+export const TEXT_US = "US"
+export const TEXT_WHY = "WHY"
+export const TEXT_CHOOSE = "CHOOSE US"
