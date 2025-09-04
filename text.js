@@ -56,3 +56,7 @@ export const TEXT_E_COMMERCE_WEB = "E-commerce websites typically display produc
 export const TEXT_FORGET_PASSWORD = "Forget your password?"
 export const TEXT_CREATE = "Create account"
 export const TEXT_LOG = "Login Here"
+
+
+// About------->
+export const TEXT_OUR_MISSION = "Our Mission"
