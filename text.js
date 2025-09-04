@@ -50,3 +50,9 @@ export const TEXT_DESCRIPTION  = "Description"
 export const TEXT_REVIEW  = "Review(122)"
 export const TEXT_E_COMMERCE  = " An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer."
 export const TEXT_E_COMMERCE_WEB = "E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information."
+
+
+// Auth------->
+export const TEXT_FORGET_PASSWORD = "Forget your password?"
+export const TEXT_CREATE = "Create account"
+export const TEXT_LOG = "Login Here"

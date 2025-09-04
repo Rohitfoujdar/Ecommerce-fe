@@ -43,11 +43,13 @@ export default function Navbar() {
             onClick={()=>setShowSearch(true)}
           />
           <div className="group relative">
-            <Image
+            <Link href="/login">
+              <Image
               src={assets.profile_icon}
               alt="Profile Icon"
               className="w-5 cursor-pointer"
             />
+            </Link>
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
                 {profileIcon.map((item, index) => (
