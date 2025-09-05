@@ -64,3 +64,15 @@ export const TEXT_ABOUT = "ABOUT"
 export const TEXT_US = "US"
 export const TEXT_WHY = "WHY"
 export const TEXT_CHOOSE = "CHOOSE US"
+
+
+// Contact------->
+export const TEXT_CONTACT = "CONTACT"
+export const TEXT_US_CONTACT = "US"
+export const TEXT_OUR_STORE = "Our Store"
+export const TEXT_STORE_ADDRESS = "54709 Willms Station Suite 350, Washington, USA"
+export const TEXT_STORE_TEL = "Tel: (415) 555-0132"
+export const TEXT_STORE_EMAIL = "Email: contact@ourstore.com" 
+export const TEXT_CAREERS = "Careers at Forever"
+export const TEXT_CAREERS_DESC = "Learn more about our teams and job openings."
+export const BTN_EXPLORE = "Explore Jobs"
