@@ -1,3 +1,4 @@
+'use client'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import favicon from "../../public/favicon.svg";
@@ -7,6 +8,7 @@ import Footer from "@/components/common/Footer";
 import SearchBar from "@/components/common/SearchBar";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";   
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,12 +20,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "FOREVER",
-  description: "The best place to buy and sell products online.",
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const isLoginPage = pathname === "/login";
+  const isCollectionPage = pathname === "/collection";
   return (
     <html lang="en">
       <head>
@@ -33,10 +33,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ShopContextProvider>
-          <Navbar />
-          <SearchBar />
+          {!isLoginPage && <Navbar />}
+          {isCollectionPage && <SearchBar />}
           {children}
-          <Footer />
+          {!isLoginPage && <Footer/>}
           <ToastContainer 
             theme="dark"
           />

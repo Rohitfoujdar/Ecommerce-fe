@@ -18,7 +18,7 @@ export const navItems = [
 ]   
 
 export const profileIcon = [
-    {title:"My Profile"},
-    {title:"Orders"},
+    // {title:"My Profile"},
+    // {title:"Orders"},
     {title:"Logout"},
 ]

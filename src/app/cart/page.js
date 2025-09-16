@@ -4,6 +4,7 @@ import { ShopContext } from "@/context/ShopContext";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { assets } from "../../../public/assets/assets";
+import CartTotal from "@/components/product/CartTotal";
 
 export default function page() {
   const { products, currency, cartItems , updateQuantity } = useContext(ShopContext);
@@ -42,7 +43,7 @@ export default function page() {
               className="py-4 border-y border-gray-300 text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4 "
             >
               <div className="flex flex-start gap-6">
-                 <Image alt="Product image" src={productData.image[0]} className="w-16 sm:w-20" />
+                 <img alt="Product image" src={productData.images[0]} className="w-16 sm:w-20" />
                  <div>
                    <p className="text-sm sm:text-lg font-medium">{productData.name}</p>
                    <div className="flex item-center gap-5 mt-2 ">
@@ -51,12 +52,22 @@ export default function page() {
                    </div>
                   </div>
               </div>
-              <input className="border border-gray-300 max-w-10 sm:max-w-20 px-1 sm:px-2 py-1" type="number" min={1} defaultValue={item.quantity} />
+              <input onChange={(e)=> e.target.value === '' || e.target.value === "0" ? null : updateQuantity(item._id , item.size , 
+                Number(e.target.value)
+              ) } className="border border-gray-300 max-w-10 sm:max-w-20 px-1 sm:px-2 py-1" type="number" min={1} defaultValue={item.quantity} />
               <Image onClick={()=>updateQuantity(item._id , item.size , 0)} src={assets.bin_icon} alt="Delete" className="w-4 sm:w-5 mr-4 cursor-pointer" />
             </div>
           );
         })}
       </div>
+
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450]">
+          <CartTotal/>
+        </div>
+
+      </div>
+
     </div>
   );
 }

@@ -17,7 +17,7 @@ import RelatedProduct from "@/components/product/RelatedProduct";
 
 export default function page() {
   const { id } = useParams();
-  const { products, currency , addToCart} = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -26,7 +26,7 @@ export default function page() {
     const product = products.find((item) => item._id === id);
     if (product) {
       setProductData(product);
-      setImage(product.image[0]);
+      setImage(product.images[0]);
     }
   };
 
@@ -36,14 +36,11 @@ export default function page() {
 
   return productData ? (
     <div className="section-width border-t-1 border-gray-300 pt-10 transition-opacity easy-in duration-500 opacity-100">
-      {/* product */}
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row ">
-        
-        {/* product images */}
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row ">
           <div className="flex sm:flex-col overflow-x-auto justify-between sm:justify-normal sm:w-[17.8%] w-full ">
-            {productData.image.map((img, index) => (
-              <Image
+            {productData.images.map((img, index) => (
+              <img
                 onClick={() => setImage(img)}
                 src={img}
                 key={index}
@@ -53,7 +50,7 @@ export default function page() {
             ))}
           </div>
           <div className="w-full sm:w-[80%]">
-            <Image src={image} alt="first image" className="w-full h-auto" />
+            <img src={image} alt="first image" className="w-full h-auto" />
           </div>
         </div>
 
@@ -89,7 +86,10 @@ export default function page() {
                 </button>
               ))}
             </div>
-            <button onClick={()=>addToCart(productData._id , size)} className="bg-black cursor-pointer text-white px-3 py-3 text-[12px] active:bg-gray-700 w-35">
+            <button
+              onClick={() => addToCart(productData._id, size)}
+              className="bg-black cursor-pointer text-white px-3 py-3 text-[12px] active:bg-gray-700 w-35"
+            >
               {TEXT_ADD_CARD}
             </button>
             <hr className="mt-5 text-gray-200" />

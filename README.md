@@ -34,3 +34,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+import multer from 'multer'
+
+const storage = multer.diskStorage({
+    filename: function(req , file , callback){
+        callback(null , file.originalname)
+    }
+})
+
+const upload = multer({storage})
+
+export default upload;
+
+
+
+
+const handleChange = (e) =>{
+    const file = e.files[0]
+    const {id} = e.target
+
+    if(!file) return;
+
+    const previewUrl = URL.createObjectUrl[file]
+
+    if(id === "item"){
+        setImage(file)
+    }
+
+}
+
+
+const preview = item.id === "image1" ? preview1 : item.id ===

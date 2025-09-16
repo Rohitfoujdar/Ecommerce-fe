@@ -1,5 +1,5 @@
 export const inputData = [
-  {type:"text" , placeholder:"Name"},
-  {type:"email" , placeholder:"Email"},
-  {type:"password" , placeholder:"Password"},
- ]
+  { type: "text", name: "name", placeholder: "Name" },
+  { type: "email", name: "email", placeholder: "Email" },
+  { type: "password", name: "password", placeholder: "Password" },
+];

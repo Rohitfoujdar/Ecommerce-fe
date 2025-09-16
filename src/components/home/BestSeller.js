@@ -15,7 +15,7 @@ export default function BestSeller() {
   const [bestSeller, setBestSeller] = useState([]);
 
   useEffect(() => {
-    const filterProducts = products.filter((item) => item.bestseller === true);
+    const filterProducts = products.filter((item) => item.bestSeller === true);
     setBestSeller(filterProducts);
   }, [products]);
   return (
@@ -42,7 +42,7 @@ export default function BestSeller() {
             <ProductItem
               key={index}
               id={item._id}
-              image={item.image}
+              images={item.images}
               name={item.name}
               price={item.price}
             />

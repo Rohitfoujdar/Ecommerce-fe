@@ -4,13 +4,24 @@ import { assets } from "../../../public/assets/assets";
 import Image from "next/image";
 import Link from "next/link";
 import { navItems, profileIcon } from "@/content/Navbar";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ShopContext } from "@/context/ShopContext";
 
 export default function Navbar() {
   const pathName = usePathname();
+  const router = useRouter()
   const [visible, setVisible] = useState(false);
   const {setShowSearch , getCartCount} = useContext(ShopContext)
+
+  const handleSearch = () =>{
+   router.push("/collection")
+   setShowSearch(true)
+  }
+
+  const handleLogout = () =>{
+    localStorage.removeItem("userToken")
+    router.push("/login")
+  }
 
   return (
     <div className="">
@@ -40,20 +51,20 @@ export default function Navbar() {
             src={assets.search_icon}
             alt="Search Icon"
             className="w-5 cursor-pointer"
-            onClick={()=>setShowSearch(true)}
+            onClick={handleSearch}
           />
           <div className="group relative">
-            <Link href="/login">
+            {/* <Link href="/login"> */}
               <Image
               src={assets.profile_icon}
               alt="Profile Icon"
               className="w-5 cursor-pointer"
             />
-            </Link>
+            {/* </Link> */}
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
                 {profileIcon.map((item, index) => (
-                  <p key={index} className="hover:text-black cursor-pointer">
+                  <p key={index} onClick={handleLogout} className="hover:text-black cursor-pointer">
                     {item.title}
                   </p>
                 ))}
